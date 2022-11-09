@@ -9,7 +9,7 @@ const w = 'Apple'
   const [news, setNews] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('Apple');
-  const baseUrl = `https://newsapi.org/v2/everything?q=${w}&from=2022-11-09&sortBy=popularity&apiKey=${API_KEY}`;
+  const baseUrl = `https://newsapi.org/v2/everything?q=${query}&from=2022-11-09&sortBy=popularity&apiKey=${API_KEY}`;
 
   useEffect(() => {
     getNews();
@@ -31,22 +31,20 @@ const w = 'Apple'
     setQuery(search);
     setSearch('');
   };
-/*      <form
-        onSubmit={getSearch}
-        >
-          <input
-            value={search}
-            onChange={updateSearch}
-            />
-            <button>Искать</button>
-      </form>
 
-      */
   return (
     <div className="App">
+      <form
+        onSubmit={getSearch}>
+        <input
+          value={search}
+          onChange={updateSearch} />
+        <button>Искать</button>
+      </form>
       <div>
-        {news.map(article => (
+        {news.map((article, i) => (
           <Article
+            key={i}
             title={article.source.name}
             author={article.author !== null ? article.author : 'Anonym'}
             name={article.title}
