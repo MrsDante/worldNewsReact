@@ -34,13 +34,17 @@ const w = 'Apple'
 
   return (
     <div className="App">
+      <div className="box">
       <form
         onSubmit={getSearch}>
         <input
           value={search}
-          onChange={updateSearch} />
+          onChange={updateSearch}
+          placeholder="TAP" />
         <button>Искать</button>
       </form>
+      <i className="fas fa-search"></i>
+      </div>
       <div className="news-list-container">
         {news.map((article, i) => (
           <Article
