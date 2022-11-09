@@ -12,6 +12,9 @@
       white max(9.5rem, 27vh)
     );
     overflow: hidden;
+
+    text-decoration: none;
+    color: black;
 }
 
 .image {
