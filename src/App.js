@@ -41,7 +41,7 @@ const w = 'Apple'
           onChange={updateSearch} />
         <button>Искать</button>
       </form>
-      <div>
+      <div className="news-list-container">
         {news.map((article, i) => (
           <Article
             key={i}
