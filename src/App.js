@@ -50,9 +50,10 @@ const w = 'Apple'
             title={article.source.name}
             author={article.author !== null ? article.author : 'Anonym'}
             name={article.title}
-            published={article.published}
+            published={article.publishedAt}
             image={article.urlToImage}
             content={article.content}
+            source={article.url}
             />
         ))}
       </div>
